@@ -8,7 +8,7 @@ const projects = [
         desc: 'Collected and cleaned large sales datasets using SQL. Designed an interactive Excel dashboard with Pivot Tables to track KPIs, identifying products contributing 20% more profit margin.',
         tags: ['SQL', 'Python', 'Excel', 'Pandas'],
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        links: { demo: '#', github: '#' },
+        links: { demo: 'https://github.com/PavanRasipogula/', github: 'https://github.com/PavanRasipogula/' },
         color: 'from-blue-400 to-cyan-400'
     },
     {
@@ -16,7 +16,7 @@ const projects = [
         desc: 'Built a web-based application to detect plant leaf diseases using image classification. Achieved 90% accuracy using CNNs and deployed using Flask.',
         tags: ['Python', 'Flask', 'OpenCV', 'ML'],
         image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        links: { demo: '#', github: '#' },
+        links: { demo: 'https://github.com/PavanRasipogula/', github: 'https://github.com/PavanRasipogula/' },
         color: 'from-green-400 to-emerald-400'
     },
     {
@@ -24,7 +24,7 @@ const projects = [
         desc: 'Automated data cleaning with SQL scripts and Excel macros, reducing reporting time by 30%. Analyzed monthly revenue and expenses using Python.',
         tags: ['SQL', 'Python', 'Excel', 'Forecasting'],
         image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        links: { demo: '#', github: '#' },
+        links: { demo: 'https://github.com/PavanRasipogula/', github: 'https://github.com/PavanRasipogula/' },
         color: 'from-purple-400 to-pink-400'
     },
     {
@@ -32,7 +32,7 @@ const projects = [
         desc: 'Performed RFM analysis and K-means clustering on customer data to identify high-value segments. Created Power BI dashboards for marketing team insights.',
         tags: ['Python', 'Power BI', 'ML', 'Clustering'],
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        links: { demo: '#', github: '#' },
+        links: { demo: 'https://github.com/PavanRasipogula/', github: 'https://github.com/PavanRasipogula/' },
         color: 'from-orange-400 to-red-400'
     },
     {
@@ -40,7 +40,7 @@ const projects = [
         desc: 'Built interactive Tableau dashboard analyzing e-commerce sales trends, customer behavior, and product performance. Integrated real-time data updates using SQL.',
         tags: ['Tableau', 'SQL', 'Analytics', 'ETL'],
         image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        links: { demo: '#', github: '#' },
+        links: { demo: 'https://github.com/PavanRasipogula/', github: 'https://github.com/PavanRasipogula/' },
         color: 'from-teal-400 to-blue-400'
     }
 ];
