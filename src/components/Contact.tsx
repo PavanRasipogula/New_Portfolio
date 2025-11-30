@@ -49,28 +49,34 @@ const Contact: React.FC = () => {
 
     return (
         <section id="contact" className="py-20 bg-light-bg dark:bg-dark-bg transition-colors duration-300 relative overflow-hidden">
-            {/* Background Sparkles */}
-            <div className="absolute inset-0 pointer-events-none">
-                {[...Array(8)].map((_, i) => (
+            {/* Floating Sparkles - Same as Hero */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {[...Array(12)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute"
+                        className="absolute text-light-primary dark:text-dark-secondary"
+                        initial={{
+                            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+                            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+                            scale: 0,
+                            opacity: 0
+                        }}
                         animate={{
-                            y: [0, -100, 0],
-                            opacity: [0, 0.5, 0],
-                            scale: [0, 1, 0],
+                            y: [null, Math.random() * -150 - 50],
+                            opacity: [0, 0.8, 0],
+                            scale: [0, 1.2, 0],
+                            rotate: [0, 180, 360]
                         }}
                         transition={{
-                            duration: 5 + Math.random() * 2,
+                            duration: 3 + Math.random() * 3,
                             repeat: Infinity,
                             delay: Math.random() * 3,
-                        }}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
+                            ease: "easeInOut"
                         }}
                     >
-                        <Sparkles className="text-light-primary dark:text-dark-secondary" size={18} />
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
                     </motion.div>
                 ))}
             </div>
@@ -212,8 +218,8 @@ const Contact: React.FC = () => {
                                 whileHover={{ scale: status === 'idle' ? 1.02 : 1 }}
                                 whileTap={{ scale: status === 'idle' ? 0.98 : 1 }}
                                 className={`w-full py-4 px-6 rounded-anime-lg font-bold shadow-neu-light dark:shadow-neon-glow-sm hover:shadow-neu-light dark:hover:shadow-neon-glow transition-all flex items-center justify-center gap-2 relative overflow-hidden ${status === 'success'
-                                        ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-white cursor-default'
-                                        : 'bg-gradient-to-r from-light-primary via-light-accent to-light-secondary dark:from-dark-primary dark:via-dark-accent dark:to-dark-secondary text-white'
+                                    ? 'bg-gradient-to-r from-green-400 to-emerald-400 text-white cursor-default'
+                                    : 'bg-gradient-to-r from-light-primary via-light-accent to-light-secondary dark:from-dark-primary dark:via-dark-accent dark:to-dark-secondary text-white'
                                     } disabled:opacity-70 disabled:cursor-not-allowed`}
                             >
                                 {status === 'loading' ? (

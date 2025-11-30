@@ -5,33 +5,34 @@ import { Briefcase, GraduationCap, Award, Heart, Star } from 'lucide-react';
 const About: React.FC = () => {
     return (
         <section id="about" className="py-20 bg-light-bg dark:bg-dark-bg transition-colors duration-300 relative overflow-hidden">
-            {/* Floating Decorative Elements */}
+            {/* Floating Sparkles - Same as Hero */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {[...Array(8)].map((_, i) => (
+                {[...Array(12)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute"
-                        initial={{ opacity: 0, scale: 0 }}
+                        className="absolute text-light-primary dark:text-dark-secondary"
+                        initial={{
+                            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+                            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+                            scale: 0,
+                            opacity: 0
+                        }}
                         animate={{
-                            opacity: [0, 0.3, 0],
-                            scale: [0, 1, 0],
-                            y: [0, -100],
+                            y: [null, Math.random() * -150 - 50],
+                            opacity: [0, 0.8, 0],
+                            scale: [0, 1.2, 0],
+                            rotate: [0, 180, 360]
                         }}
                         transition={{
-                            duration: 4 + Math.random() * 2,
+                            duration: 3 + Math.random() * 3,
                             repeat: Infinity,
                             delay: Math.random() * 3,
-                        }}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
+                            ease: "easeInOut"
                         }}
                     >
-                        {i % 2 === 0 ? (
-                            <Heart className="text-light-primary dark:text-dark-secondary" size={16} fill="currentColor" />
-                        ) : (
-                            <Star className="text-light-accent dark:text-dark-accent" size={14} fill="currentColor" />
-                        )}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
                     </motion.div>
                 ))}
             </div>
@@ -92,8 +93,60 @@ const About: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="anime-card p-8"
+                            className="anime-card p-8 relative overflow-visible"
                         >
+                            {/* 3D Floating Briefcase */}
+                            <motion.div
+                                className="absolute -top-8 -right-8 w-20 h-20 z-10"
+                                animate={{
+                                    y: [0, -12, 0],
+                                    rotate: [0, -8, 8, 0]
+                                }}
+                                transition={{
+                                    duration: 3.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <div className="relative w-full h-full">
+                                    {/* Glow effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-light-primary/40 to-light-secondary/40 dark:from-dark-primary/40 dark:to-dark-secondary/40 rounded-full blur-xl animate-glow-pulse"></div>
+
+                                    {/* Briefcase emoji with 3D effect */}
+                                    <motion.div
+                                        className="relative text-6xl filter drop-shadow-lg"
+                                        whileHover={{ scale: 1.2, rotate: -15 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        💼
+                                    </motion.div>
+
+                                    {/* Sparkle particles */}
+                                    {[...Array(3)].map((_, i) => (
+                                        <motion.div
+                                            key={i}
+                                            className="absolute text-blue-400 dark:text-cyan-300"
+                                            style={{
+                                                left: `${15 + i * 25}%`,
+                                                top: `${5 + i * 20}%`,
+                                            }}
+                                            animate={{
+                                                opacity: [0, 1, 0],
+                                                scale: [0, 1.2, 0],
+                                                y: [0, -25],
+                                            }}
+                                            transition={{
+                                                duration: 2.5,
+                                                repeat: Infinity,
+                                                delay: i * 0.8,
+                                            }}
+                                        >
+                                            ✨
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="p-3 rounded-anime bg-gradient-to-br from-light-primary/20 to-light-secondary/20 dark:from-dark-primary/20 dark:to-dark-secondary/20 text-light-primary dark:text-dark-secondary shadow-neu-light-sm dark:shadow-neon-glow-sm">
                                     <Briefcase size={24} />
@@ -130,8 +183,60 @@ const About: React.FC = () => {
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="anime-card p-8"
+                            className="anime-card p-8 relative overflow-visible"
                         >
+                            {/* 3D Floating Graduation Cap */}
+                            <motion.div
+                                className="absolute -top-8 -right-8 w-20 h-20 z-10"
+                                animate={{
+                                    y: [0, -10, 0],
+                                    rotate: [0, 5, -5, 0]
+                                }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <div className="relative w-full h-full">
+                                    {/* Glow effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-light-secondary/40 to-light-accent/40 dark:from-dark-secondary/40 dark:to-dark-accent/40 rounded-full blur-xl animate-glow-pulse"></div>
+
+                                    {/* Graduation cap emoji with 3D effect */}
+                                    <motion.div
+                                        className="relative text-6xl filter drop-shadow-lg"
+                                        whileHover={{ scale: 1.2, rotate: 15 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        🎓
+                                    </motion.div>
+
+                                    {/* Sparkle particles */}
+                                    {[...Array(3)].map((_, i) => (
+                                        <motion.div
+                                            key={i}
+                                            className="absolute text-yellow-400 dark:text-yellow-300"
+                                            style={{
+                                                left: `${20 + i * 20}%`,
+                                                top: `${10 + i * 15}%`,
+                                            }}
+                                            animate={{
+                                                opacity: [0, 1, 0],
+                                                scale: [0, 1, 0],
+                                                y: [0, -20],
+                                            }}
+                                            transition={{
+                                                duration: 2,
+                                                repeat: Infinity,
+                                                delay: i * 0.7,
+                                            }}
+                                        >
+                                            ✨
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="p-3 rounded-anime bg-gradient-to-br from-light-secondary/20 to-light-accent/20 dark:from-dark-secondary/20 dark:to-dark-accent/20 text-light-secondary dark:text-dark-secondary shadow-neu-light-sm dark:shadow-neon-glow-sm">
                                     <GraduationCap size={24} />
@@ -173,8 +278,62 @@ const About: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="anime-card p-8"
+                            className="anime-card p-8 relative overflow-visible"
                         >
+                            {/* 3D Floating Trophy */}
+                            <motion.div
+                                className="absolute -top-8 -right-8 w-20 h-20 z-10"
+                                animate={{
+                                    y: [0, -15, 0],
+                                    rotate: [0, 10, -10, 0],
+                                    scale: [1, 1.05, 1]
+                                }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <div className="relative w-full h-full">
+                                    {/* Glow effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-light-accent/40 to-light-lavender/40 dark:from-dark-accent/40 dark:to-dark-primary/40 rounded-full blur-xl animate-glow-pulse"></div>
+
+                                    {/* Trophy emoji with 3D effect */}
+                                    <motion.div
+                                        className="relative text-6xl filter drop-shadow-lg"
+                                        whileHover={{ scale: 1.3, rotate: 20 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        🏆
+                                    </motion.div>
+
+                                    {/* Star particles */}
+                                    {[...Array(4)].map((_, i) => (
+                                        <motion.div
+                                            key={i}
+                                            className="absolute text-yellow-400 dark:text-yellow-300"
+                                            style={{
+                                                left: `${10 + i * 20}%`,
+                                                top: `${8 + i * 12}%`,
+                                            }}
+                                            animate={{
+                                                opacity: [0, 1, 0],
+                                                scale: [0, 1.5, 0],
+                                                rotate: [0, 180, 360],
+                                                y: [0, -30],
+                                            }}
+                                            transition={{
+                                                duration: 3,
+                                                repeat: Infinity,
+                                                delay: i * 0.6,
+                                            }}
+                                        >
+                                            ⭐
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="p-3 rounded-anime bg-gradient-to-br from-light-accent/20 to-light-lavender/20 dark:from-dark-accent/20 dark:to-dark-primary/20 text-light-accent dark:text-dark-accent shadow-neu-light-sm dark:shadow-neon-glow-sm">
                                     <Award size={24} />
