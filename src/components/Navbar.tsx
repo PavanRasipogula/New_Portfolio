@@ -29,20 +29,46 @@ const Navbar: React.FC = () => {
             </motion.div>
 
             <div className="max-w-7xl mx-auto flex items-center justify-between relative z-10">
-                {/* Logo */}
+                {/* Logo with Avatar */}
                 <motion.div
-                    className="text-2xl font-bold tracking-tight"
+                    className="flex items-center gap-3"
                     whileHover={{ scale: 1.05 }}
                 >
-                    <span className="neon-text">Pavan</span>
-                    <span className="text-light-text dark:text-dark-text">Kumar</span>
-                    <motion.span
-                        className="inline-block ml-1 text-light-accent dark:text-dark-accent"
-                        animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
-                        transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3 }}
+                    {/* Avatar Logo */}
+                    <motion.div
+                        className="relative w-12 h-12"
+                        animate={{
+                            y: [0, -3, 0],
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
                     >
-                        ✨
-                    </motion.span>
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-light-primary/30 to-light-secondary/30 dark:from-dark-primary/30 dark:to-dark-secondary/30 rounded-full blur-md animate-glow-pulse"></div>
+
+                        {/* Avatar Image */}
+                        <img
+                            src="/hero-avatar.png"
+                            alt="Pavan Kumar"
+                            className="relative w-full h-full object-cover rounded-full border-2 border-light-primary/40 dark:border-dark-primary/40 shadow-anime-light dark:shadow-neon-glow-sm"
+                        />
+                    </motion.div>
+
+                    {/* Name */}
+                    <div className="text-2xl font-bold tracking-tight">
+                        <span className="neon-text">Pavan</span>
+                        <span className="text-light-text dark:text-dark-text">Kumar</span>
+                        <motion.span
+                            className="inline-block ml-1 text-light-accent dark:text-dark-accent"
+                            animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
+                            transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 3 }}
+                        >
+                            ✨
+                        </motion.span>
+                    </div>
                 </motion.div>
 
                 {/* Desktop Navigation */}
@@ -87,8 +113,8 @@ const Navbar: React.FC = () => {
                             whileHover={{ scale: 1.1, rotate: 180 }}
                             whileTap={{ scale: 0.9 }}
                             className={`p-3 rounded-anime-lg transition-all duration-300 ${theme === 'dark'
-                                    ? 'bg-gradient-to-br from-yellow-400/20 to-orange-400/20 text-yellow-400 border-2 border-yellow-400/40 shadow-neon-glow-sm'
-                                    : 'bg-gradient-to-br from-indigo-400/20 to-purple-400/20 text-indigo-600 border-2 border-indigo-400/40 shadow-anime-light'
+                                ? 'bg-gradient-to-br from-yellow-400/20 to-orange-400/20 text-yellow-400 border-2 border-yellow-400/40 shadow-neon-glow-sm'
+                                : 'bg-gradient-to-br from-indigo-400/20 to-purple-400/20 text-indigo-600 border-2 border-indigo-400/40 shadow-anime-light'
                                 }`}
                             aria-label="Toggle Theme"
                         >
@@ -167,8 +193,8 @@ const Navbar: React.FC = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: navItems.length * 0.1 }}
                                 className={`w-full px-4 py-3 text-sm font-bold rounded-anime flex items-center justify-center gap-2 ${theme === 'dark'
-                                        ? 'bg-gradient-to-r from-yellow-400/20 to-orange-400/20 text-yellow-400 border-2 border-yellow-400/40'
-                                        : 'bg-gradient-to-r from-indigo-400/20 to-purple-400/20 text-indigo-600 border-2 border-indigo-400/40'
+                                    ? 'bg-gradient-to-r from-yellow-400/20 to-orange-400/20 text-yellow-400 border-2 border-yellow-400/40'
+                                    : 'bg-gradient-to-r from-indigo-400/20 to-purple-400/20 text-indigo-600 border-2 border-indigo-400/40'
                                     }`}
                             >
                                 {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
