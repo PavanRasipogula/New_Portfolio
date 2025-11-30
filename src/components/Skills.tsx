@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 import { Database, FileSpreadsheet, BarChart3, Presentation, Terminal, Code2, GitBranch, LineChart, Brain, Cpu, Flame, Zap } from 'lucide-react';
 
 const skills = [
-    { name: 'Python', level: 90, color: '#3776AB', icon: Terminal, emoji: '🐍' },
-    { name: 'SQL', level: 85, color: '#003B57', icon: Database, emoji: '🗄️' },
-    { name: 'Excel', level: 90, color: '#217346', icon: FileSpreadsheet, emoji: '📊' },
-    { name: 'Power BI', level: 85, color: '#F2C811', icon: BarChart3, emoji: '📈' },
+    { name: 'Python', level: 95, color: '#3776AB', icon: Terminal, emoji: '🐍' },
+    { name: 'SQL', level: 90, color: '#003B57', icon: Database, emoji: '🗄️' },
+    { name: 'Excel', level: 98, color: '#217346', icon: FileSpreadsheet, emoji: '📊' },
+    { name: 'Power BI', level: 90, color: '#F2C811', icon: BarChart3, emoji: '📈' },
     { name: 'Tableau', level: 80, color: '#E97627', icon: Presentation, emoji: '📉' },
-    { name: 'Machine Learning', level: 80, color: '#FF6B6B', icon: Brain, emoji: '🤖' },
-    { name: 'AI/Deep Learning', level: 75, color: '#4ECDC4', icon: Cpu, emoji: '🧠' },
+    { name: 'Machine Learning', level: 85, color: '#FF6B6B', icon: Brain, emoji: '🤖' },
+    { name: 'AI/Deep Learning', level: 85, color: '#4ECDC4', icon: Cpu, emoji: '🧠' },
     { name: 'Flask', level: 80, color: '#000000', icon: Flame, emoji: '🔥' },
-    { name: 'Django', level: 75, color: '#092E20', icon: Zap, emoji: '⚡' },
-    { name: 'HTML/CSS', level: 85, color: '#E34F26', icon: Code2, emoji: '💻' },
-    { name: 'Git/GitHub', level: 85, color: '#F05032', icon: GitBranch, emoji: '🔀' },
+    { name: 'Django', level: 85, color: '#092E20', icon: Zap, emoji: '⚡' },
+    { name: 'HTML/CSS', level: 90, color: '#E34F26', icon: Code2, emoji: '💻' },
+    { name: 'Git/GitHub', level: 95, color: '#F05032', icon: GitBranch, emoji: '🔀' },
     { name: 'Data Analysis', level: 90, color: '#8b5cf6', icon: LineChart, emoji: '📊' },
 ];
 
