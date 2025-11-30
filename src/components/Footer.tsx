@@ -4,8 +4,8 @@ import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
     const socialLinks = [
-        { icon: Github, href: 'https://github.com/pavankumar', label: 'GitHub', color: 'hover:text-gray-900 dark:hover:text-white' },
-        { icon: Linkedin, href: 'https://linkedin.com/in/pavankumar', label: 'LinkedIn', color: 'hover:text-blue-600 dark:hover:text-blue-400' },
+        { icon: Github, href: 'https://github.com/pavanrasipogula', label: 'GitHub', color: 'hover:text-gray-900 dark:hover:text-white' },
+        { icon: Linkedin, href: 'https://www.linkedin.com/in/pavanrasipogula', label: 'LinkedIn', color: 'hover:text-blue-600 dark:hover:text-blue-400' },
         { icon: Mail, href: 'mailto:justmailtopavankumar@gmail.com', label: 'Email', color: 'hover:text-red-500 dark:hover:text-red-400' },
     ];
 
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
                     >
                         <p className="text-sm text-light-muted dark:text-dark-muted flex items-center justify-center gap-2">
                             Made with <Heart size={14} className="text-red-500 fill-red-500 animate-pulse" /> by{' '}
-                            <span className="font-bold text-light-primary dark:text-dark-secondary">Pavan Kumar</span>
+                            <span className="font-bold text-light-primary dark:text-dark-secondary">Pavan Rasipogula</span>
                         </p>
                         <p className="text-xs text-light-muted/70 dark:text-dark-muted/70">
                             © {new Date().getFullYear()} All rights reserved.
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                         transition={{ delay: 1, duration: 0.5 }}
                         className="text-xs text-light-muted/50 dark:text-dark-muted/50 font-mono"
                     >
-                        ✨ Powered by Anime Magic ✨
+                        ✨ Powered by Pavan Rasipogula ✨
                     </motion.div>
                 </div>
             </div>

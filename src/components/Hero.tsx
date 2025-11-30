@@ -87,7 +87,8 @@ const Hero: React.FC = () => {
                         </motion.a>
 
                         <motion.a
-                            href="/resume.pdf"
+                            href="/Pavan_Rasipogula_Resume.pdf"
+                            download="Pavan_Rasipogula_Resume.pdf"
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-4 flex items-center gap-3 font-bold text-light-text dark:text-white neu-btn-light dark:neu-btn-dark"
