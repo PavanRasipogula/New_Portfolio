@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --sparkle-duration: 2s;
+        --float-distance: 20px;
+        --glow-intensity: 1.2;
+    }
+
+    body {
+        @apply font-['Poppins'] antialiased transition-colors duration-300;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-['Fredoka'];
+    }
+}
+
+@layer components {
+
+    /* Enhanced Neumorphic Cards */
+    .neu-card-light {
+        @apply bg-light-surface shadow-anime-light rounded-anime-xl border-2 border-white/60 backdrop-blur-sm;
+    }
+
+    .neu-card-dark {
+        @apply bg-dark-surface/90 shadow-neu-dark rounded-anime-xl border border-dark-primary/40 backdrop-blur-md;
+    }
+
+    /* Anime-Style Cards */
+    .anime-card {
+        @apply rounded-anime-xl backdrop-blur-anime transition-all duration-300;
+        @apply bg-gradient-to-br from-white/80 to-light-surface/80 dark:from-dark-surface/80 dark:to-dark-bg/80;
+        @apply border-2 border-light-primary/20 dark:border-dark-primary/30;
+        @apply shadow-anime-light dark:shadow-neon-glow-sm;
+    }
+
+    .anime-card:hover {
+        @apply -translate-y-2 shadow-neu-light dark:shadow-neon-glow;
+    }
+
+    /* Anime Badges */
+    .anime-badge {
+        @apply inline-flex items-center justify-center;
+        @apply px-4 py-2 rounded-anime;
+        @apply bg-gradient-to-br from-light-primary/20 to-light-secondary/20 dark:from-dark-primary/20 dark:to-dark-secondary/20;
+        @apply border-2 border-light-primary/30 dark:border-dark-primary/40;
+        @apply shadow-neu-light-sm dark:shadow-neon-glow-sm;
+        @apply font-bold text-sm;
+        @apply transition-all duration-300;
+    }
+
+    .anime-badge:hover {
+        @apply scale-110 shadow-neu-light dark:shadow-neon-glow;
+    }
+
+    /* Buttons */
+    .neu-btn-light {
+        @apply bg-gradient-to-br from-white to-light-surface text-light-text;
+        @apply shadow-neu-light-sm hover:shadow-neu-light active:scale-95;
+        @apply rounded-anime-lg transition-all duration-300 font-bold;
+        @apply border-2 border-light-primary/30;
+    }
+
+    .neu-btn-dark {
+        @apply bg-gradient-to-br from-dark-surface to-dark-bg text-white;
+        @apply shadow-neu-dark-sm hover:shadow-neon-glow-sm active:scale-95;
+        @apply rounded-anime-lg transition-all duration-300 font-bold;
+        @apply border border-dark-primary/50;
+    }
+
+    /* Inputs */
+    .neu-input-light {
+        @apply bg-white/80 shadow-sm rounded-anime;
+        @apply border-2 border-light-secondary/30;
+        @apply outline-none focus:border-light-primary focus:shadow-neu-light-sm;
+        @apply transition-all duration-300;
+    }
+
+    .neu-input-dark {
+        @apply bg-dark-surface/60 shadow-inner rounded-anime;
+        @apply border border-dark-primary/40;
+        @apply outline-none focus:border-dark-secondary focus:shadow-neon-glow-sm;
+        @apply transition-all duration-300 text-white;
+    }
+
+    /* Chibi Float Animation */
+    .chibi-float {
+        animation: chibi-float 3s ease-in-out infinite;
+    }
+
+    /* Sparkle Particle */
+    .sparkle-particle {
+        @apply absolute pointer-events-none;
+        animation: sparkle-twinkle var(--sparkle-duration) ease-in-out infinite;
+    }
+
+    /* Holographic Panel */
+    .holographic-panel {
+        @apply rounded-anime-lg backdrop-blur-anime;
+        @apply bg-gradient-to-br from-white/10 to-transparent;
+        @apply border border-white/20 dark:border-dark-primary/30;
+        @apply shadow-lg dark:shadow-neon-glow-sm;
+    }
+
+    /* Neon Text */
+    .neon-text {
+        @apply text-transparent bg-clip-text;
+        @apply bg-gradient-to-r from-light-primary via-light-accent to-light-secondary;
+        @apply dark:from-dark-primary dark:via-dark-accent dark:to-dark-secondary;
+        text-shadow: 0 0 20px rgba(176, 0, 255, 0.3);
+    }
+
+    /* Magical Border */
+    .magical-border {
+        @apply relative overflow-hidden;
+    }
+
+    .magical-border::before {
+        content: '';
+        @apply absolute inset-0 rounded-inherit;
+        @apply bg-gradient-to-r from-light-primary via-light-secondary to-light-accent;
+        @apply dark:from-dark-primary dark:via-dark-secondary dark:to-dark-accent;
+        @apply opacity-50;
+        animation: border-rotate 3s linear infinite;
+    }
+
+    /* Glassmorphism */
+    .glass-effect {
+        @apply backdrop-blur-anime bg-white/30 dark:bg-dark-surface/30;
+        @apply border border-white/20 dark:border-dark-primary/20;
+    }
+}
+
+@layer utilities {
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
+/* Custom Keyframe Animations */
+@keyframes chibi-float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@keyframes sparkle-twinkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+@keyframes border-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-light-bg dark:bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-light-primary/50 dark:bg-dark-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-light-primary dark:bg-dark-primary;
+}
